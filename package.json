@@ -1,0 +1,72 @@
+{
+  "name": "svelte-todo",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "concurrently \"yarn dev:serve\" \"yarn lint\" \"yarn format\"",
+    "ci": "yarn install --immutable --immutable-cache --check-cache",
+    "spell-check": "cspell '**'",
+    "lint": "eslint --config eslint.config.js .",
+    "format": "prettier --write . --config ./prettier.config.js --plugin prettier-plugin-svelte",
+    "test": "vitest",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "postinstall": "husky install",
+    "dev:serve": "vite --host localhost",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "test:watch": "vitest watch",
+    "test:related": "vitest related --run"
+  },
+  "lint-staged": {
+    "src/**/*": "yarn test:related",
+    "src/**/*.{ts,tsx,d.ts}": [
+      "bash -c tsc --noEmit",
+      "yarn lint"
+    ],
+    "**/*.{ts,tsx,d.ts,json,css,scss}": "yarn format",
+    "*": "yarn spell-check"
+  },
+  "dependencies": {
+    "camelcase-keys": "9.1.2",
+    "styled-system": "5.1.5",
+    "svelte": "4.0.5",
+    "vite": "4.4.2"
+  },
+  "devDependencies": {
+    "@fontsource/fira-mono": "4.5.10",
+    "@neoconfetti/svelte": "1.0.0",
+    "@pandacss/dev": "0.18.3",
+    "@sveltejs/adapter-auto": "2.0.0",
+    "@sveltejs/adapter-static": "2.0.3",
+    "@sveltejs/kit": "1.27.4",
+    "@types/cookie": "0.5.1",
+    "@types/styled-system": "5",
+    "@types/styled-system__css": "5.0.21",
+    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "@typescript-eslint/parser": "6.11.0",
+    "concurrently": "8.2.2",
+    "cspell": "8.0.0",
+    "eslint": "8.53.0",
+    "eslint-plugin-functional": "6.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-n": "16.3.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-strict-dependencies": "1.2.3",
+    "husky": "^8.0.0",
+    "lint-staged": "15.1.0",
+    "pinst": "^3.0.0",
+    "prettier": "3.0.0",
+    "prettier-plugin-svelte": "3.1.0",
+    "svelte-check": "3.6.0",
+    "svelte-eslint-parser": "0.33.1",
+    "tslib": "2.4.1",
+    "typescript": "5.2.2",
+    "vitest": "0.34.0"
+  },
+  "type": "module",
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "4.0.2"
+  },
+  "packageManager": "yarn@4.0.2"
+}
