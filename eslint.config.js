@@ -6,7 +6,7 @@ import typescriptEslintParser from '@typescript-eslint/parser';
 import svelteEslintParser from 'svelte-eslint-parser';
 
 /** @type FlatConfig['ignores'] */
-const ignores = ['dist', '**/*.d.ts', '**/*.mjs'];
+const ignores = ['dist/**/*', 'build/**/*', '.svelte-kit/**/*', 'styled-system/**/*', '**/*.d.ts', '**/*.mjs'];
 
 /** @type FlatConfig */
 const eslintConfig = {
@@ -89,4 +89,4 @@ const typescriptConfig = {
 };
 
 /** @type Array<FlatConfig> */
-export default [eslintConfig, typescriptConfig];
+export default [eslintConfig, svelteConfig, typescriptConfig];

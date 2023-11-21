@@ -4,7 +4,8 @@
     "dist/**",
     "build/**",
     ".yarn/**",
-    "./yarn-error.log",
+    "*.mjs",
+    "yarn-error.log",
     ".svelte-kit/**",
     "styled-system"
   ],

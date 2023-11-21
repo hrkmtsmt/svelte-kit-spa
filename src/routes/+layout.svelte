@@ -1,4 +1,4 @@
-<script>
+<script type="ts">
   import '@src/app.css';
 </script>
 

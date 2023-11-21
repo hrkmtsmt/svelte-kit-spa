@@ -15,6 +15,7 @@
     "./postcss.config.cjs",
     "./styled-system/**/*",
     "./.svelte-kit/**/*",
-    "./**/*.d.ts"
+    "./**/*.d.ts",
+    "./**/*.svelte"
   ]
 }

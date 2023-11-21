@@ -6,7 +6,7 @@
     "ci": "yarn install --immutable --immutable-cache --check-cache",
     "spell-check": "cspell '**'",
     "lint": "eslint --config eslint.config.js .",
-    "format": "prettier --write . --config ./prettier.config.js --plugin prettier-plugin-svelte",
+    "format": "prettier --write . --config ./prettier.config.js",
     "test": "vitest",
     "build": "vite build",
     "preview": "vite preview",
